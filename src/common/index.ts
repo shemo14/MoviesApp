@@ -5,5 +5,15 @@ import SwitchBox from './SwitchBox';
 import Input from './Input';
 import Image from './Image';
 import UserLocation from './UserLocation';
+import Toast from './Toast';
 
-export {Text, Container, SearchInput, SwitchBox, Input, Image, UserLocation};
+export {
+  Text,
+  Container,
+  SearchInput,
+  SwitchBox,
+  Input,
+  Image,
+  UserLocation,
+  Toast,
+};

@@ -1,7 +1,9 @@
 import axios, {AxiosInstance, AxiosPromise, AxiosRequestConfig} from 'axios';
+import {showToast} from '../features/toast';
+import {store} from '../app/store';
 
 export class Client {
-  private _axiosInstance: AxiosInstance;
+  private _axiosInstance!: AxiosInstance;
 
   constructor(public baseUrl: string) {
     this.baseUrl = baseUrl;
@@ -37,6 +39,11 @@ export class Client {
       },
       async (err: any) => {
         try {
+          const errorMessage = `Error: ${err.response?.status} - ${
+            err.response?.data?.message || err.message
+          }`;
+          store.dispatch(showToast(errorMessage));
+
           console.error(
             'Axios call err: ',
             err.response.status,
@@ -44,13 +51,12 @@ export class Client {
             err,
           );
         } catch (err) {}
+        return Promise.reject(err);
       },
     );
   }
 
   get<T>(endpoint: string, config: AxiosRequestConfig = {}): AxiosPromise {
-    console.log('this is a endpoints .....', endpoint);
-    
     return new Promise((resolve, reject) => {
       this._axiosInstance!.get<T>(`${endpoint}`, config)
         .then(response => {

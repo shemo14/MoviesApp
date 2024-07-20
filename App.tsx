@@ -4,6 +4,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import MainNavigation from './src/navigation/MainNavigation';
 import {Provider} from 'react-redux';
 import {store} from './src/app/store';
+import {Toast} from './src/common';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,6 +22,7 @@ function App(): React.JSX.Element {
           backgroundColor={backgroundStyle.backgroundColor}
         />
         <MainNavigation />
+        <Toast />
       </SafeAreaView>
     </Provider>
   );
