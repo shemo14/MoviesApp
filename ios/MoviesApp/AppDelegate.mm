@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import "MoviesApp-Swift.h"
+
 
 @implementation AppDelegate
 
