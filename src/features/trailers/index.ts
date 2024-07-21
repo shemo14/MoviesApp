@@ -12,18 +12,18 @@ const initialState: TrailersState = {
   },
 };
 
-export const TrailersSlice = createSlice({
+const trailersSlice = createSlice({
   name: 'trailers',
   initialState,
   reducers: {},
   extraReducers: builder => {
     builder.addCase(
       getMovieTrailer.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<TrailerResponse>) => {
         state.trailerResponse = action.payload;
       },
     );
   },
 });
 
-export default TrailersSlice;
+export default trailersSlice.reducer;

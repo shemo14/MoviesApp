@@ -18,7 +18,7 @@ const ApisConfig: ApisConfigType = {
   },
   youtube: {
     baseUrl: 'https://www.googleapis.com/youtube/v3/',
-    apiKey: '&key=AIzaSyCzMYwhzPOVpaPNw_Oi0wfLyvcef2I15Ys&type=video',
+    apiKey: '&key=AIzaSyAc6-O9IsICfU8LZr_86aQqWsQVRFMCtm8&type=video',
   },
 };
 

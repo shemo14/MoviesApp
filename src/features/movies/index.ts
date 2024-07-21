@@ -1,5 +1,4 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {Movie, MoviesResponse, Genre} from './interfaces';
 import {
   getMovies,
   getMovieDetails,
@@ -7,7 +6,7 @@ import {
   getGenres,
   moviesDiscover,
 } from './requests';
-
+import {Movie, MoviesResponse, Genre} from './interfaces';
 export interface MoviesState {
   moviesResponse: MoviesResponse;
   searchResponse: MoviesResponse | null;
@@ -31,7 +30,7 @@ const initialState: MoviesState = {
   loading: false,
 };
 
-export const MoviesSlice = createSlice({
+const moviesSlice = createSlice({
   name: 'movies',
   initialState,
   reducers: {
@@ -45,7 +44,7 @@ export const MoviesSlice = createSlice({
     });
     builder.addCase(
       getMovies.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<MoviesResponse>) => {
         state.loading = false;
         state.moviesResponse.results = [
           ...state.moviesResponse.results,
@@ -54,33 +53,35 @@ export const MoviesSlice = createSlice({
         state.moviesResponse.total_pages = action.payload.total_pages;
       },
     );
+    builder.addCase(getMovies.rejected, state => {
+      state.loading = false;
+    });
     builder.addCase(
       getMovieDetails.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<Movie>) => {
         state.movieDetails = action.payload;
       },
     );
     builder.addCase(
       getMoviesSearch.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<MoviesResponse>) => {
         state.searchResponse = action.payload;
       },
     );
     builder.addCase(
       getGenres.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<Genre[]>) => {
         state.genres = action.payload;
       },
     );
     builder.addCase(
       moviesDiscover.fulfilled,
-      (state, action: PayloadAction<any>) => {
+      (state, action: PayloadAction<MoviesResponse>) => {
         state.moviesDiscover = action.payload;
       },
     );
   },
 });
 
-export const {setPage} = MoviesSlice.actions;
-
-export default MoviesSlice;
+export const {setPage} = moviesSlice.actions;
+export default moviesSlice.reducer;

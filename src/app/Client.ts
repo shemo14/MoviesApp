@@ -27,14 +27,6 @@ export class Client {
 
     this._axiosInstance.interceptors.response.use(
       (response: any) => {
-        try {
-          console.log(
-            'Axios call: ',
-            response.status,
-            response.request.responseURL,
-            response,
-          );
-        } catch (err) {}
         return response;
       },
       async (err: any) => {
@@ -50,7 +42,7 @@ export class Client {
             err.config.baseURL + err.config.url,
             err,
           );
-        } catch (err) {}
+        } catch (err_) {}
         return Promise.reject(err);
       },
     );

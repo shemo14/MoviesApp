@@ -1,15 +1,16 @@
-import React, {ReactElement} from 'react';
-import {requireNativeComponent, ImageProps, Text} from 'react-native';
+import React from 'react';
+import {requireNativeComponent, ViewStyle} from 'react-native';
 
-const PosterView = requireNativeComponent<ImageProps>('PosterView');
+interface PosterViewProps {
+  style?: ViewStyle;
+  imageUrl: string;
+  resizeMode?: 'cover' | 'contain' | 'stretch' | 'repeat' | 'center';
+}
 
-const Image = (props: {style: any; source: any; children: ReactElement}) => {
-  const {style, source, children} = props;
-  return (
-    <PosterView style={style} imageUrl={source.uri} resizeMode={'cover'}>
-      {children}
-    </PosterView>
-  );
+const PosterViewNative = requireNativeComponent<PosterViewProps>('PosterView');
+
+const PosterView: React.FC<PosterViewProps> = props => {
+  return <PosterViewNative {...props} />;
 };
 
-export default Image;
+export default PosterView;

@@ -1,4 +1,4 @@
-import {getGenres} from './requests.ts';
+import {ParamListBase} from '@react-navigation/native';
 
 type belongsToCollection = {
   id: number;
@@ -21,7 +21,7 @@ export interface Movie {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
-  id: number;
+  id: string;
   original_language: string;
   original_title: string;
   overview: string;
@@ -47,3 +47,11 @@ export interface MoviesResponse {
   total_pages: number;
   total_results: number;
 }
+
+export type RouteParams = {
+  MovieDetails: {
+    movie: Movie;
+  };
+  TabNavigation: undefined;
+  SearchResult: undefined;
+};

@@ -6,6 +6,8 @@ import Input from './Input';
 import Image from './Image';
 import UserLocation from './UserLocation';
 import Toast from './Toast';
+import PosterView from './PosterView';
+import MovieTitle from './MovieTitle';
 
 export {
   Text,
@@ -16,4 +18,6 @@ export {
   Image,
   UserLocation,
   Toast,
+  PosterView,
+  MovieTitle,
 };

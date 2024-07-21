@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import MainNavigation from './src/navigation/MainNavigation';
 import {Provider} from 'react-redux';
@@ -7,8 +7,6 @@ import {store} from './src/app/store';
 import {Toast} from './src/common';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = {
     backgroundColor: Colors.darker,
     flex: 1,
@@ -18,7 +16,7 @@ function App(): React.JSX.Element {
     <Provider store={store}>
       <SafeAreaView style={backgroundStyle}>
         <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          barStyle={'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
         />
         <MainNavigation />

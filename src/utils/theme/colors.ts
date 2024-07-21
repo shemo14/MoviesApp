@@ -40,6 +40,9 @@ declare module '@react-navigation/native' {
       warning_text: string;
       pink: string;
       pinkOpracity: string;
+      card: string;
+      border: string;
+      notification: string;
     };
   };
   export function useTheme(): ExtendedTheme;
@@ -97,6 +100,9 @@ const lightTheme: ExtendedTheme = {
 
     // price background
     price_background: '#D6ECF680',
+    card: '#ffffff',
+    border: '#dee2e6',
+    notification: '#ffc107',
   },
 };
 
@@ -151,6 +157,9 @@ const darkTheme: ExtendedTheme = {
 
     // price background
     price_background: '#D6ECF680',
+    card: '#000',
+    border: '#dee2e6',
+    notification: '#ffc107',
   },
 };
 
