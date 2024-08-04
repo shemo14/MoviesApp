@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {ScrollView, TextInput, View} from 'react-native';
+import {TextInput, View, FlatList} from 'react-native';
 import {Search} from '../../assets/svg';
 import Animated, {useSharedValue, withSpring} from 'react-native-reanimated';
 import {useTheme} from '@react-navigation/native';
@@ -17,8 +17,8 @@ const SearchInput = () => {
 
   const searchHandler = (val: string) => {
     setSearch(val);
-    dispatch(getMoviesSearch(val));
-    if (val.length > 3) {
+    if (val.length >= 3) {
+      dispatch(getMoviesSearch(val));
       height.value = withSpring(height.value + 300);
     }
 
@@ -28,10 +28,10 @@ const SearchInput = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.inputView}>
         <TextInput
-          placeholder={'Search ....'}
+          placeholder={'Search (at least 3 characters) ....'}
           placeholderTextColor={colors.black}
           onChangeText={searchHandler}
           value={search}
@@ -39,12 +39,13 @@ const SearchInput = () => {
         />
         <Search width={20} height={20} fill={colors.black} />
       </View>
-      <Animated.View style={[styles.searchResultContainer, {height}]}>
-        <ScrollView>
-          {searchResponse?.results.map((movie, i) => (
-            <SearchItem movie={movie} key={i} />
-          ))}
-        </ScrollView>
+      <Animated.View style={{height}}>
+        <View pointerEvents="box-none" style={styles.searchResultContainer}>
+          <FlatList
+            data={searchResponse?.results}
+            renderItem={({item}) => <SearchItem movie={item} />}
+          />
+        </View>
       </Animated.View>
     </View>
   );

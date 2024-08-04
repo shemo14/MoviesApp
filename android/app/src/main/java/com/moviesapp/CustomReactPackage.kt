@@ -12,6 +12,6 @@ class CustomReactPackage : ReactPackage {
     }
 
     override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-        return listOf(PosterViewManager(), StackViewManager())
+        return listOf(PosterViewManager())
     }
 }

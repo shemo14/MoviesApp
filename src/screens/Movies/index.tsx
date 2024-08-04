@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import {FlatList, ActivityIndicator} from 'react-native';
+import {FlatList} from 'react-native';
 import {getMovies} from '../../features/movies/requests';
 import {setPage} from '../../features/movies';
 import {useAppDispatch, useAppSelector} from '../../app/reduxHooks';
 import MovieItem from '../../components/MovieItem';
-import {Container, SearchInput, UserLocation} from '../../common';
+import {Container, SearchInput, UserLocation, Loader} from '../../common';
 
 const Movies = () => {
   const {results, page, total_pages} = useAppSelector(
@@ -23,10 +23,6 @@ const Movies = () => {
     }
   };
 
-  const RenderLoaderIcon = () => {
-    return <ActivityIndicator size="large" color="#fff" />;
-  };
-
   return (
     <Container>
       <SearchInput />
@@ -36,7 +32,7 @@ const Movies = () => {
         numColumns={3}
         onEndReached={handleLoadMore}
         onEndReachedThreshold={0.5}
-        ListFooterComponent={<RenderLoaderIcon />}
+        ListFooterComponent={<Loader />}
       />
       <UserLocation />
     </Container>

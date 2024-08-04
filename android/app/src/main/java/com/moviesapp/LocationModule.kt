@@ -10,14 +10,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.PermissionListener
+import com.facebook.react.module.annotations.ReactModule
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
+@ReactModule(name = LocationModule.NAME)
 class LocationModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext), ActivityEventListener, PermissionListener {
     private val fusedLocationClient: FusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(reactContext)
     private var promise: Promise? = null
 
     companion object {
+        const val NAME = "LocationManager"
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
     }
 
@@ -26,7 +29,7 @@ class LocationModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     }
 
     override fun getName(): String {
-        return "LocationManager"
+        return NAME
     }
 
     @ReactMethod

@@ -8,6 +8,7 @@ import UserLocation from './UserLocation';
 import Toast from './Toast';
 import PosterView from './PosterView';
 import MovieTitle from './MovieTitle';
+import Loader from './Loader';
 
 export {
   Text,
@@ -20,4 +21,5 @@ export {
   Toast,
   PosterView,
   MovieTitle,
+  Loader,
 };

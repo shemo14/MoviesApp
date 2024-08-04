@@ -17,7 +17,7 @@
 		771135A62C4A82DC000EB25B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771135A52C4A82DB000EB25B /* CoreLocation.framework */; };
 		771135A82C4A8318000EB25B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 771EAEB32C4A65B700366DF8 /* CoreLocation.framework */; };
 		771135AC2C4A8B32000EB25B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771135AB2C4A8B32000EB25B /* LocationManager.swift */; };
-		771135AF2C4AD6F5000EB25B /* PosterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 771135AE2C4AD6F5000EB25B /* PosterViewManager.m */; };
+		7734B6C02C5E2AB7002F908A /* PosterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7734B6BF2C5E2AB7002F908A /* PosterViewManager.m */; };
 		774BE0972C49AB11003C2D2A /* PosterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 774BE0962C49AB11003C2D2A /* PosterView.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A2AB018E739F4771A7D54199 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 81B019CD14D22755A0E0783E /* PrivacyInfo.xcprivacy */; };
@@ -52,9 +52,9 @@
 		771135A32C4A81D9000EB25B /* LocationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationModule.m; sourceTree = "<group>"; };
 		771135A52C4A82DB000EB25B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		771135AB2C4A8B32000EB25B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		771135AD2C4AD6F5000EB25B /* PosterViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PosterViewManager.h; path = ../../../.Trash/PosterViewManager.h; sourceTree = "<group>"; };
-		771135AE2C4AD6F5000EB25B /* PosterViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PosterViewManager.m; path = ../../../.Trash/PosterViewManager.m; sourceTree = "<group>"; };
 		771EAEB32C4A65B700366DF8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7734B6BF2C5E2AB7002F908A /* PosterViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PosterViewManager.m; sourceTree = "<group>"; };
+		7734B6C12C5E2B13002F908A /* PosterViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PosterViewManager.h; sourceTree = "<group>"; };
 		774BE0952C49AB11003C2D2A /* PosterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PosterView.h; sourceTree = "<group>"; };
 		774BE0962C49AB11003C2D2A /* PosterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PosterView.m; sourceTree = "<group>"; };
 		778CD4752C48541900CD9F28 /* MoviesApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MoviesApp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -116,11 +116,11 @@
 				81B019CD14D22755A0E0783E /* PrivacyInfo.xcprivacy */,
 				778CD4752C48541900CD9F28 /* MoviesApp-Bridging-Header.h */,
 				774BE0952C49AB11003C2D2A /* PosterView.h */,
-				771135AD2C4AD6F5000EB25B /* PosterViewManager.h */,
-				771135AE2C4AD6F5000EB25B /* PosterViewManager.m */,
 				774BE0962C49AB11003C2D2A /* PosterView.m */,
 				771135A32C4A81D9000EB25B /* LocationModule.m */,
 				771135AB2C4A8B32000EB25B /* LocationManager.swift */,
+				7734B6BF2C5E2AB7002F908A /* PosterViewManager.m */,
+				7734B6C12C5E2B13002F908A /* PosterViewManager.h */,
 			);
 			name = MoviesApp;
 			sourceTree = "<group>";
@@ -428,8 +428,8 @@
 				774BE0972C49AB11003C2D2A /* PosterView.m in Sources */,
 				771135A42C4A81D9000EB25B /* LocationModule.m in Sources */,
 				771135AC2C4A8B32000EB25B /* LocationManager.swift in Sources */,
-				771135AF2C4AD6F5000EB25B /* PosterViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				7734B6C02C5E2AB7002F908A /* PosterViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
